@@ -21,7 +21,7 @@ jobs:
     - run: npm install
 
     - name: Build Arm64
-      run: npm run build:win -- --arm64
+      run: npm run build:win-arm
 
     - name: Release
       uses: softprops/action-gh-release@v2
