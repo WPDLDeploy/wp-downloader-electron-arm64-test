@@ -12,57 +12,25 @@ asarUnpack:
   - './resources/**/*'
 
 compression: "maximum"
-defaultArch: x64  # Sets x64 as the default architecture
 
 win:
   target:
     - target: nsis
-      arch: [x64, ia32, arm64]
+      arch: [arm64]
     - target: msi
-      arch: [x64, ia32, arm64]
+      arch: [arm64]
     - target: portable
-      arch: [x64, ia32, arm64]
+      arch: [arm64]
     - target: zip
-      arch: [x64, ia32, arm64]
+      arch: [arm64]
     - target: 7z
-      arch: [x64, ia32, arm64]
+      arch: [arm64]
   executableName: wp-downloader-electron
 nsis:
   artifactName: ${name}-${version}-setup.${ext}
   shortcutName: ${productName}
   uninstallDisplayName: ${productName}
   createDesktopShortcut: always
-
-mac:
-  entitlementsInherit: build/entitlements.mac.plist
-  extendInfo:
-    NSCameraUsageDescription: Application requests access to the device's camera.
-    NSMicrophoneUsageDescription: Application requests access to the device's microphone.
-    NSDocumentsFolderUsageDescription: Application requests access to the user's Documents folder.
-    NSDownloadsFolderUsageDescription: Application requests access to the user's Downloads folder.
-  notarize: false
-
-dmg:
-  artifactName: ${name}-${version}.${ext}
-
-linux:
-  target:
-    - target: AppImage
-      arch: [x64, arm64, armv7l]
-    - target: snap
-    - target: deb
-      arch: [x64, arm64, armv7l]
-    - target: rpm
-      arch: [x64, arm64, armv7l]
-    - target: tar.gz
-      arch: [x64, arm64, armv7l]
-    - target: zip
-      arch: [x64, arm64, armv7l]
-  maintainer: wpdl.us
-  category: Utility
-
-appImage:
-  artifactName: ${name}-${version}.${ext}
 
 npmRebuild: true
 
