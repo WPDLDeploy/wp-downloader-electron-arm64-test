@@ -23,11 +23,11 @@ jobs:
     - name: Build Arm64
       run: npm run build:win-arm
 
-    - name: Release
-      uses: softprops/action-gh-release@v2
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v4
       with:
-        draft: true
-        files: |
+        name: build-arm64-on-win
+        path: |
           dist/*.msi
           dist/*.zip
           dist/*.7z
@@ -37,5 +37,5 @@ jobs:
           dist/*.tar.gz
           dist/*.yml
           dist/*.blockmap
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
