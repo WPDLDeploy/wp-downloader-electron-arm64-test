@@ -13,6 +13,7 @@
     "build:win": "electron-builder --win",
     "build:mac": "electron-builder --mac",
     "build:linux": "electron-builder --linux"
+    "build:win-arm": "electron-builder --win --arm64"
   },
   "author": "Dragon Corp",
   "license": "SEE LICENSE IN LICENSE.md",
